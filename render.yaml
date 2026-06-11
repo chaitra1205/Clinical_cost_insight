@@ -1,0 +1,29 @@
+# Render Blueprint — only used if you create/update the service from this file in the Render UI.
+# For a normal Web Service: set Start Command to:
+#   gunicorn --bind 0.0.0.0:$PORT app:app
+# Or use backend/Procfile.
+
+services:
+  - type: web
+    name: clinixcompare-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: FRONTEND_ORIGINS
+        sync: false
+      - key: MONGO_URI
+        sync: false
+      - key: SECRET_KEY
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: RESEND_FROM
+        sync: false
+      - key: BOOKING_EMAIL_TO
+        sync: false
+      - key: EMAIL_TEST_MODE
+        sync: false
