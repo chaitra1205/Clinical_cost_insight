@@ -59,7 +59,7 @@ import resend
 RESEND_API_KEY      = os.environ.get("RESEND_API_KEY", "").strip()
 RESEND_FROM         = os.environ.get("RESEND_FROM", "ClinixCompare <onboarding@resend.dev>").strip()
 # All booking notifications go here (override via env for other deployments).
-BOOKING_EMAIL_TO    = os.environ.get("BOOKING_EMAIL_TO", "siddharthgaddam34@gmail.com").strip()
+BOOKING_EMAIL_TO    = os.environ.get("BOOKING_EMAIL_TO", "chaitrabonagiri2005@gmail.com").strip()
 
 _is_render = os.environ.get("RENDER", "").strip().lower() in ("true", "1", "yes")
 _raw_test = os.environ.get("EMAIL_TEST_MODE", "").strip()
